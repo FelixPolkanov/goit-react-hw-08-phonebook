@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { Form, Label, BtnAdd, InputForm } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
-import { addContact } from '../../redux/contacts/operations';
+import { addContact } from '../redux/contacts/operations';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);

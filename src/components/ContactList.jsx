@@ -1,5 +1,5 @@
 import { Contacts, TotalContacts } from './ContactList.styled';
-import { ContactItem } from '../ContactItem/ContactItem';
+import { ContactItem } from './ContactItem/ContactItem';
 import { useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
 
