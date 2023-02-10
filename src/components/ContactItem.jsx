@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { Contact, Button } from './ContactItem.styled';
+import { Notify } from 'notiflix';
 import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
-import { Notify } from 'notiflix';
-import { updateDate } from '../../utils/formatDate';
+import { IconButton, ListItem } from '@mui/material';
+import { Close } from '@mui/icons-material';
+import { Box } from '@mui/system';
 
-export const ContactItem = ({ name, phone, id, date }) => {
+export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
-  const newDate = updateDate(date);
 
   const handleDelete = () => {
     dispatch(deleteContact(id));
@@ -15,19 +15,34 @@ export const ContactItem = ({ name, phone, id, date }) => {
   };
 
   return (
-    <Contact>
-      {name} : {phone} <br />
-      {newDate}
-      <Button type="button" id={id} onClick={handleDelete}>
-        Delete
-      </Button>
-    </Contact>
+    <ListItem
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        p: '5',
+      }}
+    >
+      <Box>
+        {name} <br />
+        {number}
+      </Box>
+
+      <IconButton
+        variant="outlined"
+        type="button"
+        id={id}
+        onClick={handleDelete}
+        sx={{ p: '5px' }}
+      >
+        <Close />
+      </IconButton>
+    </ListItem>
   );
 };
 
 ContactItem.propTypes = {
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
 };
