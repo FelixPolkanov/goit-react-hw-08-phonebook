@@ -4,9 +4,9 @@ import { Container } from '@mui/material';
 export const Loader = () => (
   <Container sx={{ display: 'flex', justifyContent: 'center' }}>
     <ThreeCircles
-      height="100"
-      width="100"
-      color="#4fa94d"
+      height="80"
+      width="80"
+      color="blue"
       wrapperStyle={{}}
       wrapperClass=""
       visible={true}
