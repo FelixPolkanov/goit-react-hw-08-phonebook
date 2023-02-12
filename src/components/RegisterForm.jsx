@@ -18,12 +18,7 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {'Copyright © '}
-      <Link color="inherit" href="https://github.com/ruslanbabkin01">
-        Ruslan
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      <Link color="inherit"></Link>{' '}
     </Typography>
   );
 }
