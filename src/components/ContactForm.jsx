@@ -6,6 +6,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { Notify } from 'notiflix';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -31,7 +32,8 @@ export const ContactForm = () => {
     if (!matchName) {
       dispatch(addContact({ ...newContact }));
     }
-    form.reset();
+     Notify.failure(`Sorry,this contact already exists`);
+        form.reset();
   };
 
   return (

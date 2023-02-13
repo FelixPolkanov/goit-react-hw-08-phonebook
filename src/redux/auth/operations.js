@@ -55,7 +55,8 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (!persistedToken) {
-      return rejectWithValue();
+       return rejectWithValue();
+     
     }
     token.set(persistedToken);
     try {
