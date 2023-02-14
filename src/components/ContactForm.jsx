@@ -32,7 +32,9 @@ export const ContactForm = () => {
     if (!matchName) {
       dispatch(addContact({ ...newContact }));
     }
-     Notify.failure(`Sorry,this contact already exists`);
+    else {
+      Notify.failure(`Sorry,this contact already exists`);
+    }
         form.reset();
   };
 
